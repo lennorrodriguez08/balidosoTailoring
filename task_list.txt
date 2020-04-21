@@ -1,0 +1,14 @@
+Prio: Insert data to customers (new transaction)
+
+
+
+
+
+
+
+
+
+    $connection->query("UPDATE coat SET shoulder ='$name' WHERE transaction_id=1") or die($connection->error);
+    $result = $connection->query("SELECT * FROM coat") or die($connection->error);
+
+    

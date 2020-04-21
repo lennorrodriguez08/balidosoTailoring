@@ -1,0 +1,152 @@
+/* ========================= HOME CONTENT =========================== */
+
+.overview {
+    position: absolute;
+    left: 235px;
+    right: 0;
+    top: 70px;
+    bottom: 0;
+    background: #eceff1;
+    color: #222222;
+    padding: 20px;
+    overflow-x: hidden;
+}
+
+.overview-content {
+    display: flex;
+    align-items: center;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.all-transactions, .all-orders, .all-expenses {
+    width: 300px;
+    height: 100px;
+    min-width: 300px;
+    background: #FFFFFF;
+    border-radius: 0 5px 5px 0;
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+    border: 1px solid rgba(0,0,0,0.2);
+}
+
+.all-transactions-icon, .all-orders-icon, .all-expenses-icon {
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.7));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.all-transactions-icon i, .all-orders-icon i, .all-expenses-icon i {
+    color: #FFFFFF;
+    font-size: 50px;
+}
+
+.all-expenses-icon i {
+    font-size: 45px!important;
+}
+
+.count-transactions, .count-orders, .count-expenses {
+    font-size: 30px!important;
+    font-weight: bold;
+    padding-bottom: 5px;
+}
+
+.no-of-transactions, .no-of-orders, .no-of-expenses {
+    text-align: center;
+    margin: 0 auto;
+    color: #000000;
+    font-size: 15px;
+}
+
+.gross-sales, .net-sales {
+    margin-top: 20px;
+    width: 460px;
+    min-width: 400px;
+    height: 100px;
+    background: #FFFFFF;
+    border: 1px solid rgba(0,0,0,0.2);
+    border-radius: 0 5px 5px 0;
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.gross-sales-icon, .net-sales-icon {
+    width: 150px;
+    background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.7));
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.gross-sales-icon i, .net-sales-icon i {
+    color: #FFFFFF;
+    font-size: 60px;
+}
+
+.no-of-gross-sales, .no-of-net-sales {
+    margin: 0 auto;
+    text-align: center;
+    font-size: 15px;
+}
+
+.gross-sales-container, .net-sales-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+}
+
+.sales-main-container {
+    display: flex;
+    align-items: center;
+}
+
+.table-container table {
+    border: 0;
+}
+
+.title-due-date {
+    background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.7));
+    width: 940px;
+    line-height: 50px;
+    color: #FFFFFF;
+    font-size: 18px;
+    margin: 20px 0;
+    padding-left: 20px;
+}
+
+.due-date-container .table-container th {
+    background-color: #8b0b13;
+    opacity: 0.8;
+    width: 313px;
+    text-align: center;
+    height: 40px;
+    color: #fff;
+    border: 0;
+    font-size: 16px;
+    font-weight: normal;
+}
+
+.due-date-container .table-container td {
+    text-align: center;
+    height: 40px;
+    color: #333;
+    border: 0;
+    border-bottom: 1px solid #bbb;
+    font-size: 16px;
+}
+
+
+td {
+    width: 313px;
+    text-align: center;
+    border: 1px solid rgba(0,0,0,0.4);
+    height: 35px;
+}
+/* ========================= CLOSING HOME CONTENT =========================== */

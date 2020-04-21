@@ -1,0 +1,341 @@
+.cashflow-container {
+  font-family: 'Century Gothic', sans-serif;
+  position: absolute;
+  top: 83px;
+  right: 10px;
+  left: 245px;
+  overflow-x: hidden;
+}
+
+.cashflow-container .title-cashflow {
+  width: 100%;
+  color: #FFFFFF;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.8)), to(rgba(0, 0, 0, 0.7)));
+  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.7));
+  line-height: 50px;
+  font-size: 16px;
+  padding-left: 10px;
+  margin-bottom: 6px;
+  overflow-x: hidden;
+}
+
+.cashflow-container .cashflow-btn {
+  position: fixed;
+  top: 88px;
+  bottom: 5px;
+  right: 15px;
+  background-color: #fff;
+  width: 148px;
+  height: 37px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.cashflow-container .cashflow-btn div:first-child a {
+  padding: 7px 16px 8px;
+}
+
+.cashflow-container .cashflow-btn a {
+  text-decoration: none;
+  background: green;
+  color: #fff;
+  padding: 7px 12px 8px;
+}
+
+.cashflow-container .cashflow-btn a:hover {
+  opacity: 0.8;
+}
+
+.cashflow-container .cashflow-btn .print-order {
+  background: #058ED9 !important;
+}
+
+.cashflow-container .cashflow-btn .delete-cashflow-btn {
+  background: #8b0b13 !important;
+  opacity: 0.9;
+}
+
+.cashflow-container .cashflow-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.2);
+  z-index: 99;
+  color: #fcfcfc;
+}
+
+.cashflow-container .cashflow-modal-form {
+  margin: 10% auto 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 340px;
+  background: #26408B;
+  padding: 20px 25px 15px;
+  border-radius: 3px;
+}
+
+.cashflow-container .cashflow-modal-form label {
+  display: block;
+  font-size: 17px;
+}
+
+.cashflow-container .cashflow-modal-form input {
+  display: block;
+  width: 100%;
+  height: 35px;
+  padding: 0 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: none;
+  color: #333;
+}
+
+.cashflow-container .cashflow-modal-form input:focus {
+  outline: none;
+}
+
+.cashflow-container .cashflow-modal .input-div {
+  margin-bottom: 3px;
+}
+
+.cashflow-container .cashflow-modal .input-div input[type="submit"] {
+  width: 137px;
+  display: inline-block;
+}
+
+.cashflow-container .cashflow-modal .input-div input[type="submit"]:first-child {
+  background: #06BA63;
+  color: #fff;
+  font-size: 18px;
+}
+
+.cashflow-container .cashflow-modal .input-div input[type="submit"]:first-child:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+.cashflow-container .cashflow-modal .input-div input[type="submit"]:nth-child(2) {
+  background: #EF476F;
+  color: #fff;
+  font-size: 18px;
+}
+
+.cashflow-container .cashflow-modal .input-div input[type="submit"]:nth-child(2):hover {
+  opacity: 0.9;
+  cursor: pointer;
+}
+
+.cashflow-container .cashflow-modal .input-div:last-child {
+  margin-top: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.cashflow-container .cashflow-modal .input-div .date {
+  text-transform: uppercase;
+  padding-left: 50px;
+}
+
+.cashflow-container .cashflow-modal .cashflow-title {
+  font-size: 20px;
+}
+
+.cashflow-container .cashflow-modal select {
+  height: 35px;
+  padding: 0 5px;
+  font-size: 15px;
+  color: #666;
+  width: 100%;
+  margin-top: 8px;
+  border: 0;
+  border-radius: 5px;
+}
+
+.cashflow-container .cashflow-modal select:focus {
+  outline: none;
+}
+
+.cashflow-container .cashflow-main-container {
+  min-width: 1100px;
+  width: 1100px;
+}
+
+.cashflow-container .cashflow-main-container .cashflow-table {
+  padding: 5px 15px 10px;
+  width: 100%;
+}
+
+.cashflow-container .cashflow-main-container .cashflow-table th {
+  min-width: 170px;
+  font-size: 16px;
+  font-weight: normal;
+  padding: 10px;
+  color: #fcfcfc;
+  background: #8b0b13;
+  opacity: 0.8;
+}
+
+.cashflow-container .cashflow-main-container .cashflow-table td {
+  min-width: 170px;
+  border: 0;
+  border-bottom: 1px solid #bbb;
+}
+
+.cashflow-container .cashflow {
+  margin-left: 15px;
+  font-size: 16px;
+}
+
+.cashflow-container .cashflow p {
+  padding-bottom: 2px;
+}
+
+.cashflow-container .cashflow-in-input {
+  text-align: center;
+  width: 150px;
+  margin-left: 16px;
+  background: #eee;
+  border: 1px solid #bbb;
+  color: #333;
+}
+
+.cashflow-container .cashflow-out-input {
+  text-align: center;
+  width: 150px;
+  background: #eee;
+  border: 1px solid #bbb;
+  color: #333;
+}
+
+.delete-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.2);
+  z-index: 99;
+  color: #fcfcfc;
+}
+
+.delete-modal-form {
+  margin: 10% auto 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 340px;
+  background: #26408B;
+  padding: 20px 25px 15px;
+  border-radius: 3px;
+}
+
+.delete-modal-form label {
+  display: block;
+  font-size: 17px;
+}
+
+.delete-modal-form input {
+  display: block;
+  width: 100%;
+  height: 35px;
+  padding: 0 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: none;
+  color: #333;
+}
+
+.delete-modal-form input:focus {
+  outline: none;
+}
+
+.delete-modal .input-div {
+  margin-bottom: 3px;
+}
+
+.delete-modal .input-div input[type="submit"] {
+  width: 137px;
+  display: inline-block;
+}
+
+.delete-modal .input-div input[type="submit"]:first-child {
+  background: #06BA63;
+  color: #fff;
+  font-size: 18px;
+}
+
+.delete-modal .input-div input[type="submit"]:first-child:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+.delete-modal .input-div input[type="submit"]:nth-child(2) {
+  background: #EF476F;
+  color: #fff;
+  font-size: 18px;
+}
+
+.delete-modal .input-div input[type="submit"]:nth-child(2):hover {
+  opacity: 0.9;
+  cursor: pointer;
+}
+
+.delete-modal .input-div:last-child {
+  margin-top: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.delete-modal .input-div .date {
+  text-transform: uppercase;
+  padding-left: 50px;
+}
+
+.delete-modal .order-title {
+  font-size: 20px;
+}
+
+.delete-modal select {
+  height: 35px;
+  padding: 0 5px;
+  font-size: 14px !important;
+  color: #666;
+  margin: 10px 0;
+}
+/*# sourceMappingURL=cashflow.css.map */

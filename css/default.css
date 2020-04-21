@@ -1,0 +1,129 @@
+html {
+    box-sizing: border-box;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: Century Gothic, sans-serif;
+    font-size: 15px;
+    color: #1b1b1b;
+    background: #eceff1;
+}
+
+/* ========================= NAVBAR =========================== */
+
+nav {
+    color: #424242;
+    background: #FFFFFF;
+    line-height: 70px;
+    font-size: 25px;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    padding: 0 15px;
+    z-index: 99;
+}
+
+.welcome-user {
+    display: flex;
+    font-size: 15px;
+}
+
+.welcome-user label {
+    font-weight: bold;
+}
+
+.branding {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* ================== CLOSING NAVBAR =========================== */
+
+
+/* ========================= SIDEBAR =========================== */
+
+.sidebar {
+    width: 235px;
+    background: #FFFFFF;
+    position: fixed;
+    top: 70px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.sidebar-logo img {
+    width: 150px;
+}
+
+.sidebar-logo {
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 25px;
+}
+
+.new-transaction, .measurements, .home, .transaction-records, .sewers, .orders, .releasing, .expense, .cash-flow {
+    display: flex;
+    align-items: center;
+    padding-left: 27px;
+    font-size: 15px;
+    margin-bottom: 5px;
+    
+}
+
+.sewers, .orders, .releasing, .expense {
+    margin-bottom: 7px!important;
+}
+.new-transaction-icon, .home-icon, .transaction-records-icon, .cash-flow-icon {
+    font-size: 30px!important;
+    padding-right: 13px;
+}
+
+.transaction-records {
+    padding-left: 28px!important;
+}
+
+.transaction-records-icon {
+    padding-right: 15px!important;
+}
+
+.home a, .new-transaction a, .measurements a, .transaction-records a, .sewers a, .orders a, .releasing a, .expense a, .cash-flow a {
+    text-decoration: none;
+    color: #1B1B1B;
+}
+
+.measurements-icon {
+    font-size: 25px!important;
+    padding-right: 15px;
+}
+
+.home, .sewers {
+    padding-left: 22px!important;
+}
+
+.sewers-icon {
+    font-size: 25px!important;
+    padding-right: 12px;
+}
+
+.orders-icon, .releasing-icon, .expense-icon {
+    font-size: 25px!important;
+    padding-right: 13px;
+}
+
+.expense-icon {
+    padding-right: 10px!important;
+}
+
+.cash-flow {
+    padding-left: 30px!important;
+}
+
+/* ========================= CLOSING SIDEBAR =========================== */

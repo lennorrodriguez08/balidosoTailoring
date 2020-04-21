@@ -1,0 +1,201 @@
+.new-transaction-container {
+    position: absolute;
+    left: 235px;
+    right: 0;
+    top: 70px;
+    bottom: 0;
+    background: #eceff1;
+    color: #222222;
+    padding: 20px;
+    overflow-x: hidden;
+}
+
+.title-new-transaction {
+    width: 100%;
+    color: #FFFFFF;
+    background: #333;
+    line-height: 50px;
+    font-size: 16px;
+    padding-left: 20px;
+    margin-bottom: 20px;
+}
+
+.trans-no {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+form {
+    padding-left: 20px;
+    
+}
+
+input, button {
+    width: 250px;
+    height: 25px;
+    margin-bottom: 5px;
+    font-size: 15px;
+}
+
+input {
+    padding: 5px;
+}
+
+button {
+    margin-top: 5px;
+    background: #0056b3;
+    border: 0;
+    color: #FFF;
+    height: 30px!important;
+    font-family: Century gothic, sans-serif;
+}
+
+/* form label:first-child {
+    display: inline-block;
+    margin-bottom: 10px;
+} */
+
+.order-label {
+    margin-bottom: 0px!important;
+    display: inline-block;
+    padding-top: 10px;
+}
+
+input[type="date"] {
+    font-size: 15px;
+    text-align: center;
+    padding-left: 45px;
+    text-transform: uppercase;
+}
+
+.form-flex-2 {
+    padding-left: 20px;
+}
+
+.price-label {
+    padding-top: 10px;
+    display: inline-block;
+}
+
+.form-flex-3 {
+    padding-top: 41px;
+    display: flex;
+    flex-direction: column;
+    padding-left: 20px;
+}
+
+.btn-save {
+    background: green;
+}
+
+.btn-save:hover {
+    opacity: 0.8;
+}
+
+.btn-receipt {
+    background: #058ED9;
+}
+
+.btn-receipt:hover {
+    opacity: 0.8;
+}
+
+.btn-cancel {
+    background:maroon;
+    opacity: 0.9;
+}
+
+.btn-cancel:hover {
+    opacity: 0.8;
+}
+
+.title-add-item {
+    font-size: 16px;
+    padding-top: 15px;
+    padding-left: 5px;
+}
+
+.main-item-container .form-div {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.main-item-container .form-div input {
+    display: inline-block;
+    margin: 10px 5px;
+}
+
+.main-item-container .submit-item {
+    background: #8b0b13;
+    display: inline-block;
+    margin-left: 5px;
+    padding: 5px;
+    text-decoration: none;
+    width: 250px;
+    text-align: center;
+    color: #222;
+    opacity: 0.8!important;
+}
+
+.main-item-container .submit-item:hover {
+    cursor: pointer;
+    opacity: 0.9!important;
+}
+
+.form-flex-1 {
+    display: flex;
+}
+
+.main-table th {
+    width: 250px;
+    font-weight: normal;
+    color: #000;
+    padding-bottom: 10px;
+}
+
+.main-table td {
+    color: #222;
+    width: 250px;
+    text-align: left;
+    border-bottom: 1px solid rgba(0,0,0,0.3)!important;
+    padding: 0 5px;
+}
+
+.main-table {
+    margin-bottom: 10px;
+}
+
+.main-table table {
+    min-width: 1000px;
+}
+
+.transaction-btns .trans-btn:hover {
+    cursor: pointer;
+}
+
+.transaction-btns {
+    background: #fff;
+    padding: 0 5px;
+     /* width: 770px; */
+     width: 515px;
+    margin-top: 10px;
+}
+
+.delete-item:hover {
+    cursor: pointer;
+}
+
+.price-label, .price-style, .balance-label {
+    display: inline-block;
+    font-size: 18px;
+}
+
+.basic-info {
+    display: flex;
+    flex-wrap: nowrap;
+    margin-top: 10px;
+}
+
+.basic-info input {
+    margin: 0 5px;
+}

@@ -1,0 +1,258 @@
+.measurements-container {
+    position: absolute;
+    left: 235px;
+    right: 0;
+    top: 70px;
+    background: #eceff1;
+    color: #222222;
+    padding: 20px;
+}
+
+.title-measurements {
+    width: 100%;
+    color: #FFFFFF;
+    background: #333;
+    line-height: 50px;
+    font-size: 16px;
+    padding-left: 20px;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+.form-container {
+    overflow: hidden;
+}
+
+form {
+    
+}
+
+.info-wrapper {
+    background: #FFFFFF;
+   
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid rgba(0,0,0,0.3);
+}
+
+input, button {
+    width: 220px;
+    height: 25px;
+    margin-bottom: 5px;
+    font-size: 15px;
+}
+
+input[type="text"], input[type="button"] {
+    padding: 5px;
+}
+
+textarea {
+    height: 70px;
+    width: 220px;
+    font-size: 15px;
+    padding: 5px;
+    resize: none;
+}
+
+.title-coat {
+    font-weight: bold;
+    font-size: 20px;
+    padding: 10px 0;
+}
+
+label {
+    display: inline-block;
+    padding-bottom: 2px;
+}
+
+.arm-input {
+    width: 54.5px;
+    margin-right: 5px;
+}
+
+.text-width {
+    width: 100px;
+}
+
+.title-body {
+    padding: 10px 0;
+}
+
+.margin-left-5px {
+    margin-left: 5px;
+}
+
+.margin-left-20px {
+    margin-left: 20px;
+}
+
+.form-flex-1 {
+    background: #FFFFFF;
+    padding: 20px;
+}
+
+.title-arm-hole {
+    display: inline-block;
+    padding-top: 10px;
+}
+
+.title-legs {
+    padding-top: 30px;
+}
+
+input[type="radio"] {
+    width: 15px;
+    margin: 0;
+    padding: 0;
+    height: 13px;
+}
+
+.pleats {
+    display: inline-block;
+    padding-top:10px;
+}
+
+
+form {
+    display: flex;
+    overflow:
+     hidden;
+}
+
+.my-container {
+    min-width: 250px;
+    width: 250px;
+    margin-right: 10px;
+}
+
+.btns {
+    position: absolute;
+    bottom: -40px;
+    left: 290px;
+    display: flex;
+    right: 0;
+}
+
+.form-flex-1 {
+    width: 240px;
+    min-width: 240px;
+    margin-right: 10px;
+    margin-left: 10px;
+    border: 1px solid rgba(0,0,0,0.3);
+}
+
+.save-btn, .update-btn {
+    width: 247px!important;
+    margin-top: 5px;
+    background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.7));
+    border: 0;
+    color: #FFF;
+    height: 30px!important;
+    font-family: Century gothic, sans-serif;
+    height: 35px!important;
+    margin-right: 10px;
+}
+
+.save-btn-measurement {
+    background: green;
+    color: #fff;
+    display: block;
+    height: 30px;
+    border: 0;
+    margin-top: 8px;
+    font-size: 16px;
+}
+
+.save-btn-measurement:hover {
+    cursor: pointer;
+    opacity: 0.9;
+}
+
+.clear-btn, .delete-btn {
+    width: 247px!important;
+    margin-top: 5px;
+    background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.7));
+    border: 0;
+    color: #FFF;
+    height: 30px!important;
+    font-family: Century gothic, sans-serif;
+    height: 35px!important;
+    margin-right: 10px;
+    background: #058ED9!important;
+}
+
+.clear-btn {
+    background: #8b0b13!important;
+    opacity: 0.8;
+}
+
+.clear-btn:hover {
+    opacity: 0.9!important;
+}
+
+.save-btn:hover, .update-btn:hover, .delete-btn:hover, .clear-btn:hover {
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+.btns {
+    width: 940px;
+    margin-top: 15px;
+}
+
+.search-name input {
+    height: 30px;
+    margin-bottom: 20px;
+    width: 240px;
+    padding-left: 10px;
+    font-size: 15px;
+    text-transform: capitalize;
+}
+
+#searchBtn {
+    background: #8b0b13!important;
+    opacity: 0.8;
+}
+
+#searchBtn:hover {
+    opacity: 1;
+    cursor: pointer;
+}
+
+#show-list {
+    position: absolute;
+    top: 8.81rem;
+    padding-top: 0!important;
+    
+    left: 20px;
+    right: 0;
+}
+
+.save-btn {
+    background: green!important;
+}
+
+
+#show-list > * {
+    width: 240px;
+    background: #fff;
+    height: 100%;
+    text-decoration: none;
+    font-size: 1rem;
+    color: #333;
+    text-transform: capitalize;
+    padding: 3px 0 3px 10px;
+    border-left: 1px solid #cccccc;
+    border-right: 1px solid #cccccc;
+    border-bottom: 1px solid #cccccc;
+}
+
+#show-list > *:hover {
+    background: #333;
+    color: #f4f4f4;
+}
+/* 
+#show-list a {
+    position: absolute;
+    background: red;
+} */

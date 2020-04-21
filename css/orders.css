@@ -1,0 +1,311 @@
+.orders-container {
+  font-family: 'Century Gothic', sans-serif;
+  position: absolute;
+  top: 83px;
+  right: 10px;
+  left: 245px;
+  overflow-x: hidden;
+}
+
+.orders-container .title-orders {
+  width: 100%;
+  color: #FFFFFF;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.8)), to(rgba(0, 0, 0, 0.7)));
+  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.7));
+  line-height: 50px;
+  font-size: 16px;
+  padding-left: 10px;
+  margin-bottom: 6px;
+  overflow-x: hidden;
+}
+
+.orders-container .orders-btn {
+  position: fixed;
+  top: 89px;
+  bottom: 5px;
+  right: 15px;
+  background-color: #fff;
+  width: 328px;
+  height: 38px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.orders-container .orders-btn a {
+  text-decoration: none;
+  background: green;
+  color: #fff;
+  padding: 8px 12px;
+}
+
+.orders-container .orders-btn a:hover {
+  opacity: 0.8;
+}
+
+.orders-container .orders-btn .print-order {
+  background: #058ED9 !important;
+}
+
+.orders-container .orders-btn .delete-order-btn {
+  background: #8b0b13 !important;
+}
+
+.orders-container .orders-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.2);
+  z-index: 99;
+  color: #fcfcfc;
+}
+
+.orders-container .orders-modal-form {
+  margin: 10% auto 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 340px;
+  background: #26408B;
+  padding: 20px 25px 15px;
+  border-radius: 3px;
+}
+
+.orders-container .orders-modal-form label {
+  display: block;
+  font-size: 17px;
+}
+
+.orders-container .orders-modal-form input {
+  display: block;
+  width: 100%;
+  height: 35px;
+  padding: 0 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: none;
+  color: #333;
+}
+
+.orders-container .orders-modal-form input:focus {
+  outline: none;
+}
+
+.orders-container .orders-modal .input-div {
+  margin-bottom: 3px;
+}
+
+.orders-container .orders-modal .input-div input[type="submit"] {
+  width: 137px;
+  display: inline-block;
+}
+
+.orders-container .orders-modal .input-div input[type="submit"]:first-child {
+  background: #06BA63;
+  color: #fff;
+  font-size: 18px;
+}
+
+.orders-container .orders-modal .input-div input[type="submit"]:first-child:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+.orders-container .orders-modal .input-div input[type="submit"]:nth-child(2) {
+  background: #EF476F;
+  color: #fff;
+  font-size: 18px;
+}
+
+.orders-container .orders-modal .input-div input[type="submit"]:nth-child(2):hover {
+  opacity: 0.9;
+  cursor: pointer;
+}
+
+.orders-container .orders-modal .input-div:last-child {
+  margin-top: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.orders-container .orders-modal .input-div .date {
+  text-transform: uppercase;
+  padding-left: 50px;
+}
+
+.orders-container .orders-modal .order-title {
+  font-size: 20px;
+}
+
+.orders-container .orders-main-container {
+  min-width: 1100px;
+  width: 1100px;
+}
+
+.orders-container .orders-main-container .orders-table {
+  padding: 5px 15px 15px;
+  width: 100%;
+}
+
+.orders-container .orders-main-container .orders-table th {
+  min-width: 170px;
+  font-size: 16px;
+  font-weight: normal;
+  padding: 10px;
+  color: #fcfcfc;
+  background: #8b0b13;
+  opacity: 0.8;
+}
+
+.orders-container .orders-main-container .orders-table td {
+  min-width: 170px;
+  border: 0;
+  border-bottom: 1px solid #bbb;
+}
+
+.delete-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.2);
+  z-index: 99;
+  color: #fcfcfc;
+}
+
+.delete-modal-form {
+  margin: 10% auto 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 340px;
+  background: #26408B;
+  padding: 20px 25px 15px;
+  border-radius: 3px;
+}
+
+.delete-modal-form label {
+  display: block;
+  font-size: 17px;
+}
+
+.delete-modal-form input {
+  display: block;
+  width: 100%;
+  height: 35px;
+  padding: 0 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: none;
+  color: #333;
+}
+
+.delete-modal-form input:focus {
+  outline: none;
+}
+
+.delete-modal .input-div {
+  margin-bottom: 3px;
+}
+
+.delete-modal .input-div input[type="submit"] {
+  width: 137px;
+  display: inline-block;
+}
+
+.delete-modal .input-div input[type="submit"]:first-child {
+  background: #06BA63;
+  color: #fff;
+  font-size: 18px;
+}
+
+.delete-modal .input-div input[type="submit"]:first-child:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+.delete-modal .input-div input[type="submit"]:nth-child(2) {
+  background: #EF476F;
+  color: #fff;
+  font-size: 18px;
+}
+
+.delete-modal .input-div input[type="submit"]:nth-child(2):hover {
+  opacity: 0.9;
+  cursor: pointer;
+}
+
+.delete-modal .input-div:last-child {
+  margin-top: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.delete-modal .input-div .date {
+  text-transform: uppercase;
+  padding-left: 50px;
+}
+
+.delete-modal .order-title {
+  font-size: 20px;
+}
+
+.delete-modal select {
+  height: 35px;
+  padding: 0 5px;
+  font-size: 15px;
+  color: #666;
+  margin: 10px 0;
+}
+
+.order-failed {
+  color: red;
+  font-size: 20px;
+  position: relative;
+  min-width: 1100px;
+  padding: 0 0 10px 5px;
+}
+
+.order-success {
+  color: green;
+  font-size: 20px;
+  position: relative;
+  min-width: 1100px;
+  padding: 0 0 10px 5px;
+}
+/*# sourceMappingURL=orders.css.map */
