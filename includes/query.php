@@ -123,7 +123,7 @@ class query
                 
                 <td>".$row['amount_receive']."</td><td>".$row['balance']."</td>
                 
-                <td class='text-center'><a data-id2='".$row['transaction_no']."' name='released' class='released' style=$releasedStyle>Released</a><a data-id2='".$row['transaction_no']."' name='delivered' class='delivered' style=$deliveredStyle>Delivered</a><a id='editModal' name='editModal' class='editModal' data-id2='".$row['transaction_no']."' style='cursor:pointer;'>Update</a><a href='invoice.php?transactionId=".$row['transaction_no']."&contact=".$row['contact']."&local=".$row['local']."&date=".$row['date']."&name=".$row['fullname']."&items=".$row['item_name']."&qty=".$row['quantity']."&presc=".$row['prescription']."&totalPrc=".$row['total_price']."&rcv=".$row['amount_receive']."&bal=".$row['balance']."' target='_blank' id='invoice' name='invoice'>Invoice</a></td> 
+                <td class='text-center'><a data-id2='".$row['transaction_no']."' name='released' class='released' style=$releasedStyle>Released</a><a data-id2='".$row['transaction_no']."' name='delivered' class='delivered' style=$deliveredStyle>Delivered</a><a id='editModal' name='editModal' class='editModal' data-id2='".$row['transaction_no']."' style='cursor:pointer;'>Update</a><a href='invoice.php?transactionId=".$row['transaction_no']."&contact=".$row['contact']."&local=".$row['local']."&date=".$row['date']."&name=".$row['fullname']."&items=".$row['item_name']."&qty=".$row['quantity']."&presc=".$row['prescription']."&totalPrc=".$row['total_price']."&rcv=".$row['amount_receive']."&bal=".$row['balance']."&unit_price=".$row['unit_price']."' target='_blank' id='invoice' name='invoice'>Invoice</a></td> 
                 
                 <td class='text-center'><textarea class='customerNotes' name='customerNotes' data-notes='".$row['transaction_no']."' placeholder='' autocomplete='disabled'> ".$row['notes']." </textarea></td></tr>";
             }
@@ -530,6 +530,60 @@ class query
         }
 
         $connection->close();
+    }
+
+
+    function QUERY_GET_PRINT_VALUES($var1)
+    {
+        include 'handler.php';
+        $SQL = "SELECT MIN(m_id), transaction_no FROM measurement WHERE fullname = '$var1'";
+        $result = $connection->query($SQL) or die($connection->error);
+
+        if ($result->num_rows > 0)
+        {
+            while($row = $result->fetch_assoc())
+            {
+                $transaction_no = $row["transaction_no"];
+                $SQL_SELECT_MEASUREMENT_INFO = "SELECT coat.transaction_no AS transaction_no,
+                CONCAT (coat.shoulder, ' - ', barong.shoulder) AS shoulder,
+                measurement.fullname,
+                coat.length AS c_length,
+                coat.chest AS chest,
+                coat.waist AS waist,
+                coat.hips AS c_hips,
+                CONCAT (coat.armhole, ' - ', barong.armhole) AS armhole,
+                CONCAT (coat.arm_1, ' / ', coat.arm_2, ' / ', coat.arm_3) AS armlength,
+                barong.arm_ls_1 AS arm_ls_1,
+                barong.arm_ls_2 AS arm_ls_2,
+                barong.arm_ss_1 AS arm_ss_1,
+                barong.arm_ss_2 AS arm_ss_2,
+                coat.down AS down,
+                coat.front AS front,
+                coat.back AS back,
+                barong.neck AS neck,
+                barong.slit AS slit,
+                pants.waistline AS waistline,
+                pants.hips AS p_hips,
+                pants.length AS p_length,
+                pants.crotch AS crotch,
+                pants.legs AS legs,
+                pants.knee AS knee,
+                pants.bottom AS bottom,
+                pants.pleats AS pleats
+                FROM coat INNER JOIN barong ON barong.transaction_no = coat.transaction_no INNER JOIN pants ON pants.transaction_no = barong.transaction_no INNER JOIN measurement ON measurement.transaction_no
+                WHERE coat.transaction_no = '$transaction_no'
+                GROUP BY coat.transaction_no";
+
+                $result_2 = $connection->query($SQL_SELECT_MEASUREMENT_INFO) or die($connection->error);
+                if ($result_2->num_rows > 0)
+                {
+                    while ($row = $result_2->fetch_assoc())
+                    {
+                        echo "printmeasurement.php?transaction_no=".$row['transaction_no']."&shoulder=".$row['shoulder']."&fullname=".$row['fullname']."&c_length=".$row['c_length']."&chest=".$row['chest']."&waist=".$row['waist']."&c_hips=".$row['c_hips']."&armhole=".$row['armhole']."&armlength=".$row['armlength']."&arm_ls_1=".$row['arm_ls_1']."&arm_ls_2=".$row['arm_ls_2']."&arm_ss_1=".$row['arm_ss_1']."&arm_ss_2=".$row['arm_ss_2']."&down=".$row['down']."&front=".$row['front']."&back=".$row['back']."&neck=".$row['neck']."&slit=".$row['slit']."&waistline=".$row['waistline']."&p_hips=".$row['p_hips']."&p_length=".$row['p_length']."&crotch=".$row['crotch']."&legs=".$row['legs']."&knee=".$row['knee']."&bottom=".$row['bottom']."&pleats=".$row['pleats']."";
+                    }
+                }
+            }
+        }
     }
 
     // Save transaction records

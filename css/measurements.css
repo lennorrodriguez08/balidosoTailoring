@@ -35,6 +35,10 @@ form {
     border: 1px solid rgba(0,0,0,0.3);
 }
 
+.info-wrapper div:last-of-type {
+    margin-top: 10px;
+}
+
 input, button {
     width: 220px;
     height: 25px;
@@ -161,6 +165,12 @@ form {
     border: 0;
     margin-top: 8px;
     font-size: 16px;
+}
+
+.print-btn-measurement {
+    color: white;
+    padding: 5px 83px;
+    cursor: pointer;
 }
 
 .save-btn-measurement:hover {

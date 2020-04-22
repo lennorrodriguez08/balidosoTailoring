@@ -45,6 +45,7 @@
                 // This line populate the data for coat
                 while($row = mysqli_fetch_array($result3))
                 {
+                    $transaction_id = $row['transaction_no'];
                     echo "<div class='form-flex-1' id='coat'>";
                     echo "<p class='title-coat'>Coat</p>";
                     echo "<label for=''>Shoulder</label><br/>";
@@ -77,6 +78,7 @@
                 // This line populate the data for barong
                 while($row = mysqli_fetch_array($result4))
                 {
+                    
                     echo "<div class='form-flex-1'>";
                     echo "<p class='title-coat'>Barong</p>";
                     echo "<label for=''>Shoulder</label><br/>";

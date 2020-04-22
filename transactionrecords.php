@@ -64,7 +64,7 @@
          
          <!-- Main Table Start -->
          <form action="includes/process.php" method="GET">
-            <table id="table" cellspacing="0" cellpadding="0">
+            <table id="table" cellspacing="0" cellpadding="0" style="border-collapse: collapse">
                <thead>
                   <tr>
                      <th class="fixed-size">Trans No.</th>
@@ -140,7 +140,7 @@
          </div>
          <!-- Main Table Start -->
          <form action="includes/process.php" method="GET">
-            <table id="table" cellspacing="0" cellpadding="0">
+            <table id="table" cellspacing="0" cellpadding="0" style="border-collapse: collapse">
                <thead>
                   <tr>
                      <th class="fixed-size">Trans No.</th>

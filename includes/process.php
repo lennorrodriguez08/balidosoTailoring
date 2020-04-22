@@ -15,6 +15,7 @@ $SQL_POPULATE_TABLE_MAIN = "SELECT
     customers.released AS released,
     customers.delivered AS delivered,
     GROUP_CONCAT(items.prescription SEPARATOR '<br>') AS prescription,
+    GROUP_CONCAT(items.price SEPARATOR '<br>') AS unit_price,
     GROUP_CONCAT(item_name SEPARATOR '<br>') AS item_name, 
     GROUP_CONCAT(items.quantity SEPARATOR '<br>') AS quantity,
     SUM((quantity * price)) AS total_price,
@@ -34,6 +35,7 @@ $SQL_POPULATE_TABLE_MAIN_C = "SELECT
     customers.released AS released,
     customers.delivered AS delivered,
     GROUP_CONCAT(items.prescription SEPARATOR '<br>') AS prescription,
+    GROUP_CONCAT(items.price SEPARATOR '<br>') AS unit_price,
     GROUP_CONCAT(item_name SEPARATOR '<br>') AS item_name, 
     GROUP_CONCAT(items.quantity SEPARATOR '<br>') AS quantity,
     SUM((quantity * price)) AS total_price,
@@ -109,6 +111,14 @@ if (isset($_POST['save']))
 
 
 
+if (isset($_POST['print-measurement'])) {
+    header("Location: ../printmeasurement.php");
+}
+
+
+
+
+
 // New transaction 
 if (isset($_POST['saveCustomer']))
 {
@@ -174,6 +184,14 @@ if (isset($_POST["populateTable_c"]))
     $query->QUERY_POPULATE_RECORDS_TABLE($SQL_POPULATE_TABLE_MAIN_C);
 }
 
+
+
+
+if (isset($_POST["getVal"]))
+{
+    $fullname = $_POST["getVal"];
+    $query->QUERY_GET_PRINT_VALUES($fullname);
+}
 
 
 

@@ -1,6 +1,7 @@
 let data = new Array();
 let isClicked = false;
         $(document).ready(function () {
+
             $("#search").keyup(function () { 
                 var searchText = $(this).val();
 
@@ -44,11 +45,23 @@ let isClicked = false;
                                 $("#type").html(response);
                             },
                         });
+
+                        $.ajax({
+                            type: "POST",
+                            url: "includes/process.php",
+                            data: {getVal:value},
+                            dataType: "text",
+                            success: function (response) {
+                                $(".print-btn-measurement").attr("href", response);
+                            }
+                        });
+
                     }
                 } else {
                     alert("No record found");
                 }
                 isClicked = false;
+
             });
 
             $("#note").keypress(function (e) { 
