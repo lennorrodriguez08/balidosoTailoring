@@ -75,7 +75,7 @@ class query
 
 
     //Populate records table
-    function QUERY_POPULATE_RECORDS_TABLE($var1)
+    function QUERY_POPULATE_RECORDS_TABLE($var1, $var2)
     {
         include 'handler.php';
         $result = $connection->query($var1) or die($connection->error);
@@ -123,7 +123,7 @@ class query
                 
                 <td>".$row['amount_receive']."</td><td>".$row['balance']."</td>
                 
-                <td class='text-center'><a data-id2='".$row['transaction_no']."' name='released' class='released' style=$releasedStyle>Released</a><a data-id2='".$row['transaction_no']."' name='delivered' class='delivered' style=$deliveredStyle>Delivered</a><a id='editModal' name='editModal' class='editModal' data-id2='".$row['transaction_no']."' style='cursor:pointer;'>Update</a><a href='invoice.php?transactionId=".$row['transaction_no']."&contact=".$row['contact']."&local=".$row['local']."&date=".$row['date']."&name=".$row['fullname']."&items=".$row['item_name']."&qty=".$row['quantity']."&presc=".$row['prescription']."&totalPrc=".$row['total_price']."&rcv=".$row['amount_receive']."&bal=".$row['balance']."&unit_price=".$row['unit_price']."' target='_blank' id='invoice' name='invoice'>Invoice</a></td> 
+                <td class='text-center'><a data-id2='".$row['transaction_no']."' name='released' class='released' style=$releasedStyle>Released</a><a data-id2='".$row['transaction_no']."' name='delivered' class='delivered' style=$deliveredStyle>Delivered</a><a id='$var2' name='$var2' class='$var2' data-id2='".$row['transaction_no']."' style='cursor:pointer;'>Update</a><a href='invoice.php?transactionId=".$row['transaction_no']."&contact=".$row['contact']."&local=".$row['local']."&date=".$row['date']."&name=".$row['fullname']."&items=".$row['item_name']."&qty=".$row['quantity']."&presc=".$row['prescription']."&totalPrc=".$row['total_price']."&rcv=".$row['amount_receive']."&bal=".$row['balance']."&unit_price=".$row['unit_price']."' target='_blank' id='invoice' name='invoice'>Invoice</a></td> 
                 
                 <td class='text-center'><textarea class='customerNotes' name='customerNotes' data-notes='".$row['transaction_no']."' placeholder='' autocomplete='disabled'> ".$row['notes']." </textarea></td></tr>";
             }

@@ -171,7 +171,7 @@ if (isset($_POST["calculatePrice"]))
 // Codes for populating datas on the transactionrecord table
 if (isset($_POST["populateTable"]))
 {
-    $query->QUERY_POPULATE_RECORDS_TABLE($SQL_POPULATE_TABLE_MAIN);
+    $query->QUERY_POPULATE_RECORDS_TABLE($SQL_POPULATE_TABLE_MAIN, "editModal");
 }
 
 
@@ -181,7 +181,7 @@ if (isset($_POST["populateTable"]))
 // Codes for populating datas on the transactionrecord completed table
 if (isset($_POST["populateTable_c"]))
 {
-    $query->QUERY_POPULATE_RECORDS_TABLE($SQL_POPULATE_TABLE_MAIN_C);
+    $query->QUERY_POPULATE_RECORDS_TABLE($SQL_POPULATE_TABLE_MAIN_C, "editModal_c");
 }
 
 
@@ -196,7 +196,7 @@ if (isset($_POST["getVal"]))
 
 
 
-// Codes for "edit" modal on the transactionrecords
+// Codes for "edit" modal on the transactionrecords active
 if (isset($_POST["dataId"]))
 {
     $id = $_POST["dataId"];
@@ -204,6 +204,12 @@ if (isset($_POST["dataId"]))
 }
 
 
+// Codes for "edit" modal on the transactionrecords completed
+if (isset($_POST["dataId_c"]))
+{
+    $id = $_POST["dataId_c"];
+    $query->QUERY_EDIT_MODAL($id);
+}
 
 
 

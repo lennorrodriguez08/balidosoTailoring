@@ -60,15 +60,27 @@ $(document).ready(function () {
           }
         });
         $("#modalTable").show();
-    });
 
-    // Edit button event
-    $(document).on("click",".editModal", function () {
-        ids = $(this).data("id2");
         $.ajax({
           type: "POST",
           url: "includes/process.php",
           data: {dataId:ids},
+          dataType: "text",
+          success: function (response) {
+            $("#modalDiv_c").html(response);
+            // alert(response);
+          }
+        });
+        $("#modalTable_c").show();
+    });
+
+    // Edit button event
+    $(document).on("click",".editModal_c", function () {
+        ids = $(this).data("id2");
+        $.ajax({
+          type: "POST",
+          url: "includes/process.php",
+          data: {dataId_c:ids},
           dataType: "text",
           success: function (response) {
             $("#modalDiv_c").html(response);
