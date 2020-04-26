@@ -14,6 +14,7 @@
             <div class="sidebar-logo">
                 <img src="img/logo.png" alt="">
             </div>
+            <div style="display: flex; flex-direction: column;">
             <div class="sidebar-list">
                <div class="home">
                     <p class="home-icon"><a href="#"><i class="fas fa-home"></i></a></p>
@@ -44,6 +45,13 @@
                     <p><a href="cashflow">Cash Flow</a></p>
                 </div>
             </div>
+            <div style="position: absolute; bottom: 0; background: #fff; padding-left: 20px; padding-bottom: 20px; padding-right: 8px;">
+                <div style="display: flex; align-items: center; justify-content: center;">
+                    <p style="align-self: flex-end; color: #333; font-size: 15px; font-family: Arial, Helvetica, sans-serif"><strong>Powered By</strong>&nbsp;&nbsp;</p>
+                    <img src="./img/r-duo-manila.png" width="90px" alt="">
+                </div>
+            </div>
+        </div>
         </div>
         <!-- ============== CLOSING SIDEBAR ================== -->
 <?php

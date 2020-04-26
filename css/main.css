@@ -44,13 +44,15 @@ body {
     padding: 12px 20px;
     font-size: 16px;
     color: #FFFFFF;
-    background: #000000;
+    background: #333;
+    border-radius: 3px;
 }
 
 form {
     padding: 15px 20px;
     background: #FFFFFF;
-    border: 1px solid rgba(0,0,0,0.1);
+    border: 1px solid #ccc;
+    
 }
 
 form input {
@@ -67,6 +69,32 @@ form input:placeholder-shown {
 
 .input-1 {
     margin-top: 10px;
+}
+
+.uniquee {
+    border-radius: 3px;
+}
+
+.uniquee:focus {
+    outline: none;
+}
+
+.input-1:focus {
+    outline: none;
+}
+
+.submit-login:hover {
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+.submit-register {
+    border-radius: 3px;
+}
+
+.submit-register:hover {
+    opacity: 0.8;
+    cursor: pointer;
 }
 
 form select {

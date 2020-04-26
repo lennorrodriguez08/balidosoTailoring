@@ -111,7 +111,7 @@
                         <input type="text" name="full-name" placeholder="Full Name" class="full-name" style="text-align: center">
                         <input type="number" name="contact-no" placeholder="Contact No." class="contact-no" style="text-align: center">
                         <input type="text" name="local" placeholder="Local" class="local" style="text-align: center">
-                        <input type="date" name="date" placeholder="Price" class="date" style="text-align: center">
+                        <input type="text" name="date" placeholder="Set Due Date" class="date" style="text-align: center" onfocus="(this.type='date')">
                         </div>
                         <p class="title-add-item">Add item</p>
                         <div class="main-item-container" id="add-item">
@@ -146,24 +146,24 @@
                             <option value="Clearbook">Clearbook</option>
                         </select>
                                 <input type="number" name="quantity" id="quantity" placeholder="Quantity" class="qty" style="text-align: center">
-                                <input type="text" name="prescriptions" id="prescriptions" placeholder="Prescription" class="presc" style="text-align: center">
+                                <input type="text" name="prescriptions" id="prescriptions" placeholder="Description" class="presc" style="text-align: center">
                                 <input type="number" name="price" id="price" placeholder="Price" class="price" style="text-align: center">
                             </div>
-                            <a class="submit-item" style="background: #8b0b13; opacity: 0.8; color: #fff;" id="submit-item">Submit item</a>
+                            <a class="submit-item" style="background: #058ED9; color: #fff; border-radius: 3px;" id="submit-item">Submit item</a>
                             
                         </div>
                        
                         <div class="table-container">
-                        <p class="title-add-item" style="margin-bottom: 15px">Item list</p>
+                        <p class="title-add-item" style="margin: 10px 0; background: #ccc; padding: 8px 0; color: #333;"><strong>&nbsp;&nbsp;&nbsp;ITEM LIST</strong></p>
                         <div class="main-table">
                             <table>
                                 <thead>
                                     <tr>
-                                        <th>ITEM NAME</th>
-                                        <th>QUANTITY</th>
-                                        <th>PRESCRIPTION</th>
-                                        <th>PRICE</th>
-                                        <th>ACTION</th>
+                                        <th>Item</th>
+                                        <th>Quantity</th>
+                                        <th>Description</th>
+                                        <th>Price</th>
+                                        <th>Action</th>
                                     </tr>
                                 </thead>
                                 
@@ -171,21 +171,21 @@
                                 </tbody>
                             </table>
                         </div>
-                        <div class="table-price" style="border-top: 1px solid rgba(0,0,0,0.3); padding-top: 15px;">
+                        <div class="table-price" style="padding-top: 15px;">
                             <label for="" class="price-style">Total Price: </label>
                             <input type="number" disabled class="price-label" id="price-label" name="price-label" style="margin-left: 70px; font-weight: normal; width: 150px!important; text-align: center; font-size: 16px;">
                         </div>
                         <div class="table-price">
-                            <label for="" class="price-style">Amount Received: </label>
+                            <label for="" class="price-style">Amount Received:&nbsp;&nbsp;</label>
                             <input type="number" style="margin-bottom: 0!important; width: 150px!important; text-align: center; font-size: 16px;" class="amount-received" name="amtReceive" id="amtReceive">
                         </div>
                         <div class="table-price">
-                            <label for="" class="price-style">Total Balance: </label>
+                            <label for="" class="price-style">Total Balance:&nbsp;</label>
                             <input type="number" disabled name="total-balance" id="total-balance" class="balance-label" style="margin-top: 5px; margin-left: 40px; width: 150px; font-size: 16px; text-align: center">
                         </div>
                         <div class="transaction-btns">
-                            <button type="submit" class="btn-save trans-btn" name="saveCustomer">Save</button>
-                            <button type="reset" class="btn-cancel trans-btn">Cancel</button>
+                            <button type="submit" class="btn-save trans-btn" name="saveCustomer" style="border-radius: 3px;">Save</button>
+                            <button type="reset" class="btn-cancel trans-btn" style="border-radius: 3px;">Cancel</button>
                         </div>
                         </div>
                         </form>

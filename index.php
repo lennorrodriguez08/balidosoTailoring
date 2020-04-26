@@ -13,7 +13,7 @@
 <head>
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
-<title>Login Form</title>
+<title>Balidoso Tailoring | Login</title>
 <link rel="stylesheet" href="css/main.css">
 
 <style>
@@ -51,7 +51,7 @@ body {
         </div>
         <div class="form-container">
             <p class="login-text">Login</p>
-            <form action="includes/login.php" method="post">
+            <form action="includes/login.php" method="post" autocomplete="off">
                 <input type="text" class="input-1" placeholder="Username" name="username">
                 <input type="password" placeholder="Password" name="password">
                 <select name="user_level" id="">
@@ -59,8 +59,8 @@ body {
                     <option value="admin">Login As Admin</option>
                     <option value="cashier">Login As Cashier</option>
                 </select>
-                <button type="submit" name="submit">Submit</button>
-                <a href="register">Create User Account </a>
+                <button type="submit" name="submit" class="submit-login" style="border-radius: 3px;">Submit</button>
+                <a href="register">Create An Account </a>
             </form>
         </div>
     </div>

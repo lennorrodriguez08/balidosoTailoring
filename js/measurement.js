@@ -36,6 +36,7 @@ let isClicked = false;
                 
                 if (isClicked == true && value != "No record") {
                     if (!value == "") {
+                        // for populating measurements data
                         $.ajax({
                             method: "POST",
                             url: "includes/show.php",
@@ -46,13 +47,25 @@ let isClicked = false;
                             },
                         });
 
+                        // for populating data to print button get request link
                         $.ajax({
                             type: "POST",
                             url: "includes/process.php",
-                            data: {getVal:value},
+                            data: {getVal:true, fullname:value},
                             dataType: "text",
                             success: function (response) {
                                 $(".print-btn-measurement").attr("href", response);
+                            }
+                        });
+
+                        // for populating notes data of selected client
+                        $.ajax({
+                            type: "POST",
+                            url: "includes/process.php",
+                            data: {noteVal:true, fullname:value},
+                            dataType: "text",
+                            success: function (response) {
+                                $("#note").val(response);
                             }
                         });
 
@@ -63,20 +76,4 @@ let isClicked = false;
                 isClicked = false;
 
             });
-
-            $("#note").keypress(function (e) { 
-                var textInput = $(this).val();
-                
-                $.ajax({
-                    type: "POST",
-                    url: "includes/process.php",
-                    data: {note:true, textInput:textInput},
-                    dataType: "dataType",
-                    success: function (response) {
-                        
-                    }
-                });
-            });
-
-            
         });

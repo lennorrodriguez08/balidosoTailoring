@@ -51,6 +51,13 @@ class query
         $connection->close();
     }
 
+    public function updateMeasurement($var1, $varId)
+    {
+        include 'handler.php';
+        $connection->query("UPDATE measurement SET notes = '$var1' WHERE transaction_no = '$varId' ") or die($connection->error);
+        $connection->close();
+    }
+
 
     public function QUERY_INSERT_CUSTOMER($var1, $var2, $var3, $var4, $var5, $var6)
     {
@@ -125,7 +132,7 @@ class query
                 
                 <td class='text-center'><a data-id2='".$row['transaction_no']."' name='released' class='released' style=$releasedStyle>Released</a><a data-id2='".$row['transaction_no']."' name='delivered' class='delivered' style=$deliveredStyle>Delivered</a><a id='$var2' name='$var2' class='$var2' data-id2='".$row['transaction_no']."' style='cursor:pointer;'>Update</a><a href='invoice.php?transactionId=".$row['transaction_no']."&contact=".$row['contact']."&local=".$row['local']."&date=".$row['date']."&name=".$row['fullname']."&items=".$row['item_name']."&qty=".$row['quantity']."&presc=".$row['prescription']."&totalPrc=".$row['total_price']."&rcv=".$row['amount_receive']."&bal=".$row['balance']."&unit_price=".$row['unit_price']."' target='_blank' id='invoice' name='invoice'>Invoice</a></td> 
                 
-                <td class='text-center'><textarea class='customerNotes' name='customerNotes' data-notes='".$row['transaction_no']."' placeholder='' autocomplete='disabled'> ".$row['notes']." </textarea></td></tr>";
+                <td class='text-center'><textarea class='customerNotes' name='customerNotes' data-notes='".$row['transaction_no']."' placeholder='' autocomplete='disabled'>".$row['notes']."</textarea></td></tr>";
             }
         }
 
@@ -179,22 +186,22 @@ class query
         $sortStatusReleased = "";
         $sortStatusDelivered = "";
 
-        // Date
-        if ($sortDateFrom == "")
-        {
-            $sortDateFrom = "1990-01-01";
-        }
-        
-        if ($sortDateTo == "")
-        {
-            $sortDateTo = date("Y-m-d");
-        }
 
+        // Date
+        if ($sortDateFrom == "" || $sortDateFrom == NULL)
+        {
+            $sortDateFrom = "0000-00-00";
+        }
+        if ($sortDateFrom == "" || $sortDateTo == NULL)
+        {
+            $sortDateTo = "2100-12-12";
+        }
         if ($sortDateFrom == "" && $sortDateTo == "")
         {
-            $sortDateFrom = "1990-01-01";
-            $sortDateto = date("Y-m-d");
+            $sortDateFrom = "0000-00-00";
+            $sortDateTo = "2100-12-12";
         }
+
 
         // Status
         if ($var5 == "released")
@@ -230,7 +237,7 @@ class query
         customers.amount_receive,
         ((SUM(items.quantity * items.price)) - (customers.amount_receive)) AS balance
         FROM customers INNER JOIN items ON customers.transaction_no = items.transaction_no
-        WHERE customers.fullname LIKE '%$sortName%' AND customers.transaction_no LIKE '%$sortTransNo%' AND customers.date BETWEEN '$sortDateFrom' AND '$sortDateTo' AND released LIKE '%$sortStatusReleased%' AND delivered LIKE '%$sortStatusDelivered%' AND (released = 'false' OR delivered = 'false')
+        WHERE customers.fullname LIKE '%$sortName%' AND customers.transaction_no LIKE '%$sortTransNo%' AND released LIKE '%$sortStatusReleased%' AND delivered LIKE '%$sortStatusDelivered%' AND (released = 'false' OR delivered = 'false') AND (customers.date BETWEEN '$sortDateFrom' AND '$sortDateTo')
         GROUP BY items.transaction_no";
 
         $result = $connection->query($sql) or die($connection->error);
@@ -297,21 +304,20 @@ class query
         $sortDateTo = $var4;
 
         // Date
-        if ($sortDateFrom == "")
+        if ($sortDateFrom == "" || $sortDateFrom == NULL)
         {
-            $sortDateFrom = "1990-01-01";
+            $sortDateFrom = "0000-00-00";
         }
-        
-        if ($sortDateTo == "")
+        if ($sortDateFrom == "" || $sortDateTo == NULL)
         {
-            $sortDateTo = date("Y-m-d");
+            $sortDateTo = "2100-12-12";
         }
-
         if ($sortDateFrom == "" && $sortDateTo == "")
         {
-            $sortDateFrom = "1990-01-01";
-            $sortDateto = date("Y-m-d");
+            $sortDateFrom = "0000-00-00";
+            $sortDateTo = "2100-12-12";
         }
+        
 
         $sql = "SELECT 
         customers.transaction_no, 
@@ -547,6 +553,7 @@ class query
                 $SQL_SELECT_MEASUREMENT_INFO = "SELECT coat.transaction_no AS transaction_no,
                 CONCAT (coat.shoulder, ' - ', barong.shoulder) AS shoulder,
                 measurement.fullname,
+                measurement.notes,
                 coat.length AS c_length,
                 coat.chest AS chest,
                 coat.waist AS waist,
@@ -570,7 +577,9 @@ class query
                 pants.knee AS knee,
                 pants.bottom AS bottom,
                 pants.pleats AS pleats
-                FROM coat INNER JOIN barong ON barong.transaction_no = coat.transaction_no INNER JOIN pants ON pants.transaction_no = barong.transaction_no INNER JOIN measurement ON measurement.transaction_no
+                FROM coat INNER JOIN barong ON barong.transaction_no = coat.transaction_no 
+                INNER JOIN pants ON pants.transaction_no = barong.transaction_no 
+                INNER JOIN measurement ON measurement.transaction_no = coat.transaction_no
                 WHERE coat.transaction_no = '$transaction_no'
                 GROUP BY coat.transaction_no";
 
@@ -579,11 +588,29 @@ class query
                 {
                     while ($row = $result_2->fetch_assoc())
                     {
-                        echo "printmeasurement.php?transaction_no=".$row['transaction_no']."&shoulder=".$row['shoulder']."&fullname=".$row['fullname']."&c_length=".$row['c_length']."&chest=".$row['chest']."&waist=".$row['waist']."&c_hips=".$row['c_hips']."&armhole=".$row['armhole']."&armlength=".$row['armlength']."&arm_ls_1=".$row['arm_ls_1']."&arm_ls_2=".$row['arm_ls_2']."&arm_ss_1=".$row['arm_ss_1']."&arm_ss_2=".$row['arm_ss_2']."&down=".$row['down']."&front=".$row['front']."&back=".$row['back']."&neck=".$row['neck']."&slit=".$row['slit']."&waistline=".$row['waistline']."&p_hips=".$row['p_hips']."&p_length=".$row['p_length']."&crotch=".$row['crotch']."&legs=".$row['legs']."&knee=".$row['knee']."&bottom=".$row['bottom']."&pleats=".$row['pleats']."";
+                        echo "printmeasurement.php?transaction_no=".$row['transaction_no']."&shoulder=".$row['shoulder']."&fullname=".$row['fullname']."&c_length=".$row['c_length']."&chest=".$row['chest']."&waist=".$row['waist']."&c_hips=".$row['c_hips']."&armhole=".$row['armhole']."&armlength=".$row['armlength']."&arm_ls_1=".$row['arm_ls_1']."&arm_ls_2=".$row['arm_ls_2']."&arm_ss_1=".$row['arm_ss_1']."&arm_ss_2=".$row['arm_ss_2']."&down=".$row['down']."&front=".$row['front']."&back=".$row['back']."&neck=".$row['neck']."&slit=".$row['slit']."&waistline=".$row['waistline']."&p_hips=".$row['p_hips']."&p_length=".$row['p_length']."&crotch=".$row['crotch']."&legs=".$row['legs']."&knee=".$row['knee']."&bottom=".$row['bottom']."&pleats=".$row['pleats']."&notes=".$row['notes']."";
                     }
                 }
             }
         }
+    }
+
+    // Codes for getting the notes on selected client
+    function QUERY_GET_NOTE_VALUES($var1)
+    {
+        include 'handler.php';
+        $SQL = "SELECT MIN(m_id), transaction_no, notes FROM measurement WHERE fullname = '$var1'";
+        $result = $connection->query($SQL) or die($connection->error);
+
+        if ($result->num_rows > 0)
+        {
+            while ($row = $result->fetch_assoc())
+            {
+                echo $row['notes'];
+            }
+        }
+
+        $connection->close();
     }
 
     // Save transaction records

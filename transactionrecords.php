@@ -53,7 +53,7 @@
                      </div>
 
                      <div style="margin-left: 20px; display: inline-block;">
-                        <input name="clearValue" id="clearValue" type="button" value="Clear">
+                        <input name="clearValue" id="clearValue" type="button" value="Refresh">
                      </div>
                   </div>
                </div>
@@ -68,11 +68,11 @@
                <thead>
                   <tr>
                      <th class="fixed-size">Trans No.</th>
-                     <th class="fixed-size">Trans Date</th>
+                     <th class="fixed-size">Due Date</th>
                      <th class="fixed-size fixed-fname">Full Name</th>
                      <th class="fixed-size-1 fixed-items">Items</th>
                      <th class="fixed-size-1 fixed-items final-fixed">Qty</th>
-                     <th class="fixed-size">Prescription</th>
+                     <th class="fixed-size">Description</th>
                      <th class="fixed-size">Total Price</th>
                      <th class="fixed-size">Received</th>
                      <th class="fixed-size">Balance</th>
@@ -93,8 +93,8 @@
          </div>
 
 
-         <div class="records-btns" style="width: auto; height: 35px; bottom: 0px; background: #333;">
-            <a href="home.php">Go to homepage</a>
+         <div class="records-btns" style="width: auto; height: 35px; bottom: 0px;">
+            <a href="home.php" style="background: green;">Go to homepage</a>
          </div>
       </div>
 
@@ -131,7 +131,7 @@
                      </div>
 
                      <div style="margin-left: 20px; display: inline-block;">
-                        <input name="clearValue_c" id="clearValue_c" type="button" value="Clear" style="width: auto; padding: 4px 20px; border: none; background: #8b0b13; color: #fff; outline: none;">
+                        <input name="clearValue_c" id="clearValue_c" type="button" value="Refresh" style="width: auto; padding: 4px 20px; border: none; background: #8b0b13; color: #fff; outline: none;">
                      </div>
                   </div>
                </div>
@@ -144,11 +144,11 @@
                <thead>
                   <tr>
                      <th class="fixed-size">Trans No.</th>
-                     <th class="fixed-size">Trans Date</th>
+                     <th class="fixed-size">Due Date</th>
                      <th class="fixed-size fixed-fname">Full Name</th>
                      <th class="fixed-size-1 fixed-items">Items</th>
                      <th class="fixed-size-1 fixed-items final-fixed">Qty</th>
-                     <th class="fixed-size">Prescription</th>
+                     <th class="fixed-size">Description</th>
                      <th class="fixed-size">Total Price</th>
                      <th class="fixed-size">Received</th>
                      <th class="fixed-size">Balance</th>
@@ -168,9 +168,12 @@
             </div>
          </div>
 
-         <div class="records-btns" style="width: auto; height: 35px; bottom: 0px; background: #333;">
-            <a href="home.php">Go to homepage</a>
+         <div class="records-btns" style="width: auto; height: 35px; bottom: 0px;">
+            <a href="home.php" style="background: green;">Go to homepage</a>
          </div>
+
+         
+
       </div>
    </div>
 

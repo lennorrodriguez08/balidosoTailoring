@@ -32,6 +32,9 @@
   font-size: 16px;
   font-weight: normal;
   margin-bottom: 10px;
+  background: #8b0b13;
+  opacity: 0.8;
+  color: #fff;
 }
 
 #transaction-container #table td {
@@ -59,9 +62,13 @@
 }
 
 #transaction-container #table td a:nth-child(3) {
-  background: #8b0b13;
-  opacity: 0.9;
+  background: #058ED9;
+  opacity: 0.8;
   padding: 9px 12px;
+}
+
+#transaction-container #table td a:nth-child(3):hover {
+  opacity: 0.9;
 }
 
 #transaction-container #table td a:nth-child(4) {
@@ -113,7 +120,8 @@
 }
 
 #transaction-container .records-btns {
-  background: #fff;
+  background: green;
+  border-radius: 3px;
   width: 345px;
   height: 37px;
   display: -webkit-box;
@@ -134,7 +142,7 @@
 #transaction-container .records-btns a {
   text-decoration: none;
   display: inline-block;
-  color: #fcfcfc;
+  color: #fff;
   padding: 7px;
   margin: 0 2px;
 }
@@ -310,11 +318,12 @@
   outline: none;
   border-radius: 5px;
   height: 27px;
+  opacity: 0.8;
 }
 
 #clearValue:hover, #clearValue_c:hover {
   cursor: pointer;
-  opacity: 0.8;
+  opacity: 0.9;
 }
 
 

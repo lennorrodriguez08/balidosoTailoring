@@ -20,7 +20,7 @@
                     <!-- ============== COAT FORM CONTAINER ================== -->
                     <div class="my-container">
                         <div class="search-name">
-                            <label for="">Search Name</label>
+                            <label for="">Search Customer Name</label>
                             
                                 <input type="text" name="search" id="search">
                                 <input type="button" name="submit" id="searchBtn" value="Search" class="search-value" style="background: green; border: 0; color: #fff; padding: 3px; font-size: 16px; border-radius: 3px;">
@@ -37,10 +37,10 @@
                             <label for="" style="display: inline-block; margin-bottom: 7px;">Note</label><br/>
                             <textarea name="note" id="note" cols="30" rows="10"></textarea>
                             <div>
-                                <button class="save-btn-measurement" name="save" style="border-radius: 3px;">Update</button>
+                                <button type="submit" class="save-btn-measurement" name="save" style="border-radius: 3px;">Update Measurement</button>
                             </div>
                             <div>
-                                <a href='' target="_blank" class="print-btn-measurement" name="print-measurement" style="background: #058ED9; border-radius: 3px;"><i class="fas fa-print"></i>&nbsp;&nbsp;Print</a>
+                                <a href='' target="_blank" class="print-btn-measurement" name="print-measurement" style="background: #058ED9; border-radius: 3px; text-decoration: none;"><i class="fas fa-print"></i>&nbsp;&nbsp;Print</a>
                             </div>
                         </div>
                     </div>

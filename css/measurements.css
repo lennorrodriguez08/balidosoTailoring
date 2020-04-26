@@ -173,6 +173,10 @@ form {
     cursor: pointer;
 }
 
+.print-btn-measurement:hover {
+    opacity: 0.9;
+}
+
 .save-btn-measurement:hover {
     cursor: pointer;
     opacity: 0.9;
@@ -225,7 +229,7 @@ form {
 }
 
 #searchBtn:hover {
-    opacity: 1;
+    opacity: 0.9;
     cursor: pointer;
 }
 

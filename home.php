@@ -3,7 +3,7 @@
     // ## This line automatically includes the header and the sidebar then populates between pages
     require 'views/header.php';
     require 'views/sidebar.php';
-
+    include "./includes/handler.php";
 
 ?>
 
@@ -128,7 +128,7 @@
                     <thead>
                         <tr>
                             <th>
-                                Name
+                                Customer Name
                             </th>
                             <th>
                                 Items
@@ -139,11 +139,42 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>Sample Only</td>
-                            <td>Sample Only</td>
-                            <td>03-30-2020</td>
-                        </tr>
+
+                        <?php 
+
+                            date_default_timezone_set('Asia/Chongqing');
+                            $timestamp = time();
+                            $time_now = date('m d, Y', $timestamp);
+
+                        ?>
+                        
+                        <?php 
+                        
+                            $query = "SELECT * FROM customers";
+                            $result = mysqli_query($connection, $query);
+
+                            while ($row = mysqli_fetch_assoc($result)) {
+                                $transaction_no = $row['transaction_no'];
+                                $fullname = $row['fullname'];
+                                $date = $row['date'];
+                                
+                                $date_left = strtotime($date) - $timestamp;
+                                $remaining_day = floor($date_left / (60 * 60 * 24));
+                                $str_date = date('F d, Y', strtotime($date));
+                                if ($remaining_day <= 5) {
+
+                                    echo "
+                                    <tr>
+                                        <td>$fullname</td>
+                                        <td>Sample Item</td>
+                                        <td>$str_date</td>
+                                    </tr>";
+                                }
+                                
+                              }
+                        
+                        ?>
+                       
                     </tbody>
                 </table>
             </div>

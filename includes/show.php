@@ -133,7 +133,7 @@
                         echo "<input type='radio' name='pleats' class='text-width' value='true' checked>";
                         echo "<label for=''>With Pleats</label><br/>";
                     }
-                    else 
+                    elseif ($row['pleats'] == "false" || $row['pleats'] == "")
                     {
                         echo "<input type='radio' name='pleats' class='text-width' value='false' checked>";
                         echo "<label for='' class='pleats'>No Pleats</label><br/>";

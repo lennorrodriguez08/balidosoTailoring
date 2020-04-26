@@ -89,12 +89,16 @@ if (isset($_POST['save']))
     $pleats = $_POST['pleats'];
 
     $fullname = $_POST['search'];
+    $note = $_POST['note'];
 
     // This line fetch the ID of the customer
     $id = $query->findId("transaction_no", "customers", "fullname", "$fullname");
 
     // This line updates the coat table
     $query->updateCoat($coat, $length, $arm_1, $arm_2, $arm_3, $chest, $waist, $hips, $armhole, $down, $front, $back, $id);
+
+    // This line updates the measurements table
+    $query->updateMeasurement($note, $id);
 
     // This line updates the barong table
     $query->updateBarong($b_shoulder, $b_length, $b_ls_left, $b_ls_right, $b_ss_left, $b_ss_right, $b_body_chest, $b_body_waist, $b_body_hips, $b_arm_hole, $b_neck, $b_slit, $id);
@@ -109,11 +113,6 @@ if (isset($_POST['save']))
 
 
 
-
-
-if (isset($_POST['print-measurement'])) {
-    header("Location: ../printmeasurement.php");
-}
 
 
 
@@ -157,7 +156,7 @@ if (isset($_POST["tid"]))
 if (isset($_POST["calculatePrice"]))
 {
     $tid = $_POST["calculatePrice"];
-    $sql = "SELECT SUM(price) AS sum_price FROM items WHERE transaction_no = '$tid'";
+    $sql = "SELECT SUM(price * quantity) AS sum_price FROM items WHERE transaction_no = '$tid'";
     $result = $connection->query($sql);
     $row = $result->fetch_assoc();
     echo $row["sum_price"];
@@ -186,11 +185,21 @@ if (isset($_POST["populateTable_c"]))
 
 
 
-
+// Codes for populating data to button print get links
 if (isset($_POST["getVal"]))
 {
-    $fullname = $_POST["getVal"];
+    $fullname = $_POST["fullname"];
     $query->QUERY_GET_PRINT_VALUES($fullname);
+}
+
+
+
+
+// Codes to get notes value of selected client
+if (isset($_POST["noteVal"]))
+{
+    $fullname = $_POST["fullname"];
+    $query->QUERY_GET_NOTE_VALUES($fullname);
 }
 
 
