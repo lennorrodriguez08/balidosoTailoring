@@ -100,7 +100,28 @@
                     <div class="gross-sales-container">
                        <p class="peso-sign" style="font-size: 30px;">&#8369;</p>
                        <!-- ============ TO BE TARGET ============== -->
-                        <p class="count-gross-sales" style="font-size: 30px;">100</p>
+                        <?php 
+
+                        include 'includes/handler.php';
+
+                        $get_gross_sale = "";
+                        $result = $connection->query("SELECT SUM(items.price * items.quantity) AS gross_sale FROM items");
+                        if ($result->num_rows > 0)
+                        {
+                            while($row = $result->fetch_assoc())
+                            {
+                                ?>
+                                    <p class="count-gross-sales" style="font-size: 30px;"><?php echo $row["gross_sale"] ?></p>
+                                <?php
+                            }
+                        }
+                        else
+                            {
+                                ?>
+                                    <p class="count-gross-sales" style="font-size: 30px;">0</p>
+                                <?php
+                            }
+                        ?>
                     </div>
                     <p class="title-gross-sales">Gross Sales</p>
                 </div>
@@ -113,7 +134,28 @@
                     <div class="net-sales-container">
                        <p class="peso-sign" style="font-size: 30px;">&#8369;</p>
                        <!-- ============ TO BE TARGET ============== -->
-                        <p class="count-net-sales" style="font-size: 30px;">100</p>
+                        <?php 
+                            include 'includes/handler.php';
+                            $total_gross_due = 0;
+                            $result = $connection->query("SELECT items.transaction_no, (SUM(items.price * items.quantity) - customers.amount_receive) AS gross_due FROM items LEFT JOIN customers ON items.transaction_no = customers.transaction_no GROUP BY transaction_no");
+
+                            if ($result->num_rows > 0)
+                            {
+                                while($row = $result->fetch_assoc())
+                                {
+                                    $total_gross_due += floatval($row["gross_due"]);
+                                }
+                                ?>
+                                    <p class="count-net-sales" style="font-size: 30px;"><?php echo $total_gross_due ?>.00</p>
+                                <?php
+                            }
+                            else {
+                                ?>
+                                <p class="count-net-sales" style="font-size: 30px;">0</p>
+                                <?php
+                            }
+                        ?>
+                        
                     </div>
                     <p class="title-net-sales">Gross Due</p>
                 </div>
@@ -128,10 +170,10 @@
                     <thead>
                         <tr>
                             <th>
-                                Customer Name
+                                Transaction No.
                             </th>
                             <th>
-                                Items
+                                Customer Name
                             </th>
                             <th>
                                 Due Date
@@ -165,8 +207,8 @@
 
                                     echo "
                                     <tr>
+                                        <td>$transaction_no</td>
                                         <td>$fullname</td>
-                                        <td>Sample Item</td>
                                         <td>$str_date</td>
                                     </tr>";
                                 }
