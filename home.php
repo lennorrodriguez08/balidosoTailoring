@@ -105,7 +105,7 @@
                         include 'includes/handler.php';
 
                         $get_gross_sale = "";
-                        $result = $connection->query("SELECT SUM(items.price * items.quantity) AS gross_sale FROM items");
+                        $result = $connection->query("SELECT SUM(items.price * items.quantity) AS gross_sale FROM items") or die($connection->error);
                         if ($result->num_rows > 0)
                         {
                             while($row = $result->fetch_assoc())
@@ -136,18 +136,21 @@
                        <!-- ============ TO BE TARGET ============== -->
                         <?php 
                             include 'includes/handler.php';
-                            $total_gross_due = 0;
-                            $result = $connection->query("SELECT items.transaction_no, (SUM(items.price * items.quantity) - customers.amount_receive) AS gross_due FROM items LEFT JOIN customers ON items.transaction_no = customers.transaction_no GROUP BY transaction_no");
+                            $result = $connection->query("SELECT SUM(x.total) as gross_due
+                            FROM (SELECT SUM(items.price * items.quantity) - customers.amount_receive as total
+                                  FROM items
+                                  INNER JOIN customers ON items.transaction_no = customers.transaction_no
+                                  GROUP BY items.transaction_no
+                                 ) as x") or die($connection->error);
 
                             if ($result->num_rows > 0)
                             {
                                 while($row = $result->fetch_assoc())
                                 {
-                                    $total_gross_due += floatval($row["gross_due"]);
+                                    ?>
+                                        <p class="count-net-sales" style="font-size: 30px;"><?php echo $row['gross_due'] ?></p>
+                                    <?php
                                 }
-                                ?>
-                                    <p class="count-net-sales" style="font-size: 30px;"><?php echo $total_gross_due ?>.00</p>
-                                <?php
                             }
                             else {
                                 ?>
@@ -162,6 +165,19 @@
             </div>
         </div>
         <!-- ============== CLOSING GROSS SALES / NET SALES ================== -->
+
+        <div class="charts" style="padding: 1.5rem 0; display: flex;">
+          <div class="row-100" style="display: flex; width: 920px;">
+            <div class="col-50" style="width: 50%; margin-right: 1.5rem;">
+              <canvas id="no_transaction" role="img"></canvas>
+            </div>
+            <div class="col-50" style="width: 50%;">
+              <canvas id="gross_chart" role="img"></canvas>
+            </div>
+          </div>
+        </div>
+
+
         <!-- ============== TABLE AREA ================== -->
         <div class="due-date-container">
             <p class="title-due-date" style="background: #333;">Upcoming Due Dates</p>
@@ -225,6 +241,36 @@
     </div>
     <!-- ============== CLOSING HOME CONTENT ================== --> 
 
+    <?php 
+        include 'includes/handler.php';
+        include 'includes/chartJsMap.php';
+        $jsMap = new chartJsMap;
+
+        // no_of_transaction data
+        $result = $jsMap->get_query_data_no_transction();
+        $row = $result->fetch_array(MYSQLI_NUM);
+        
+
+
+        // gross_sales data
+        $result2 = $jsMap->get_query_data_sale();
+        $row_gross_sale = $result2->fetch_array(MYSQLI_NUM);
+
+
+
+        // gross_due data
+        $result3 = $jsMap->get_query_data_due();
+        $row_gross_due = $result3->fetch_array(MYSQLI_NUM);
+
+
+
+
+
+
+        $connection->close();
+    ?>
+
+    
     <?php
         // ##
         // ## This line automatically includes the footer then populate between pages

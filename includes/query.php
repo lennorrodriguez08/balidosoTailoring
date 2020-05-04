@@ -59,11 +59,11 @@ class query
     }
 
 
-    public function QUERY_INSERT_CUSTOMER($var1, $var2, $var3, $var4, $var5, $var6)
+    public function QUERY_INSERT_CUSTOMER($var1, $var2, $var3, $var4, $var5, $var6, $var7)
     {
         include 'handler.php';
 
-        $connection->query("INSERT INTO customers (transaction_no, fullname, contact, local, date, amount_receive, notes, released, delivered) VALUES ('$var1', '$var2', '$var3', '$var4', '$var5', '$var6', '', 'false', 'false') ") or die($connection->error);
+        $connection->query("INSERT INTO customers (transaction_no, fullname, contact, local, date, date_of_transaction, amount_receive, notes, released, delivered) VALUES ('$var1', '$var2', '$var3', '$var4', '$var5', '$var7', '$var6', '', 'false', 'false') ") or die($connection->error);
 
         $connection->query("INSERT INTO measurement (transaction_no, fullname) VALUES ('$var1', '$var2') ") or die($connection->error);
 

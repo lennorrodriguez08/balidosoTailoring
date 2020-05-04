@@ -127,8 +127,9 @@ if (isset($_POST['saveCustomer']))
     $local = $_POST['local'];
     $date = $_POST['date'];
     $amountReceive = $_POST['amtReceive'];
+    $date_of_transaction = date("Y-m-d");
     // This line inserts data to tables: customers, measurement, coat, barong, pants
-    $query->QUERY_INSERT_CUSTOMER($transaction_no, $fullname, $contact, $local, $date, $amountReceive);
+    $query->QUERY_INSERT_CUSTOMER($transaction_no, $fullname, $contact, $local, $date, $amountReceive, $date_of_transaction);
     header("Location: ../newtransaction");
     exit();
 }

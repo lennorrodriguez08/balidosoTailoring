@@ -39,8 +39,10 @@
         <!-- <link rel="stylesheet" href="css/newtransaction.css"> -->
         <link rel="stylesheet" href="css/all.css">
         <link rel="stylesheet" href="css/default.css">
-
         <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.css">
+
+        <!-- Chart JS -->
+        <script src="js/lib/Chart.bundle.min.js"></script>
         </head>
         <body>
         <!-- ============== NAVBAR ================== -->
