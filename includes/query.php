@@ -121,7 +121,7 @@ class query
                 }
 
 
-
+                
                 echo "<tr>
                 
                 <td>".$tid."</td><td>".$row['date']."</td><td>".$row['fullname']."</td>

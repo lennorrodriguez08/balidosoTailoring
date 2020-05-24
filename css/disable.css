@@ -1,0 +1,59 @@
+/* This file disable all not usable elements for admin role */
+/* 
+*/
+
+/*Omit new transaction button on sidebar list*/
+.sidebar-list .new-transaction { 
+    display: none!important;
+    visibility: hidden!important;
+    font-size: 0!important;
+    line-height: 0!important;
+}
+
+/*Omit transaction record column actions*/
+.trans_rec_table thead tr th:nth-child(10) {
+    display: none!important;
+    visibility: hidden!important;
+    font-size: 0!important;
+    line-height: 0!important;
+    border: none!important;
+}
+
+/*Omit transaction record column actions buttons*/
+.trans_rec_table tbody tr td:nth-child(10) {
+    display: none!important;
+    visibility: hidden!important;
+    font-size: 0!important;
+    line-height: 0!important;
+    border: none!important;
+}
+
+/* Disabled textarea comments */
+.trans_rec_table tbody tr td:nth-child(11) textarea{
+    background: #ffffff!important;
+    pointer-events: none;
+}
+
+/* Disabled notes on measurements */
+.my-container .info-wrapper #note {
+    background: #ffffff!important;
+    pointer-events: none;
+}
+
+/* Omit update measurement button */
+.my-container .info-wrapper div:first-of-type {
+    display: none!important;
+    visibility: hidden!important;
+    font-size: 0!important;
+    line-height: 0!important;
+    border: none!important;
+}
+
+/* Disabled input boxes on measurements */
+#coat input[type=text],
+#barong input[type=text],
+#pants input[type=text],
+#pants input[type=radio] {
+    background: #ffffff!important;
+    pointer-events: none;
+}

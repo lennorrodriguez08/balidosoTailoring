@@ -54,11 +54,11 @@ body {
             <form action="includes/login.php" method="post" autocomplete="off">
                 <input type="text" class="input-1" placeholder="Username" name="username">
                 <input type="password" placeholder="Password" name="password">
-                <select name="user_level" id="">
+                <!-- <select name="user_level" id="">
                     <option value="">Select User Type</option>
                     <option value="admin">Login As Admin</option>
                     <option value="cashier">Login As Cashier</option>
-                </select>
+                </select> -->
                 <button type="submit" name="submit" class="submit-login" style="border-radius: 3px;">Submit</button>
                 <a href="register">Create An Account </a>
             </form>

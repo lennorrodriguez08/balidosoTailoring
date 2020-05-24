@@ -3,7 +3,7 @@
 
 class chartJsMap {
 
-    public function get_query_data_no_transction()
+    public function get_query_data_no_transaction()
     {
         include 'handler.php';
 

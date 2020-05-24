@@ -227,8 +227,7 @@
                                         <td>$fullname</td>
                                         <td>$str_date</td>
                                     </tr>";
-                                }
-                                
+                                }     
                               }
                         
                         ?>
@@ -247,7 +246,7 @@
         $jsMap = new chartJsMap;
 
         // no_of_transaction data
-        $result = $jsMap->get_query_data_no_transction();
+        $result = $jsMap->get_query_data_no_transaction();
         $row = $result->fetch_array(MYSQLI_NUM);
         
 

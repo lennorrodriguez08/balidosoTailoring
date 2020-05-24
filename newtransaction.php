@@ -42,7 +42,7 @@
                     <p>Balidoso Tailoring </p>
                     <div class="welcome-user">
                         <p>You logged in as:&nbsp;</p>
-                        <label for="" style="text-transform: capitalize; font-weight: normal!important;"><?php echo $_SESSION["role"]?></label>
+                        <label id="role" for="" data-role="<?php echo $_SESSION['role']?>" style="text-transform: capitalize; font-weight: normal!important;"><?php echo $_SESSION["role"]?></label>
                         <a href="includes/logout.php" style="display: inline-block; color: #333; text-decoration: none; margin: 0 0.5rem; font-weight: bold">Log out</a>
                     </div>
                 </div>

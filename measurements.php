@@ -32,10 +32,8 @@
                         <!-- ============== CLOSING SEARCH NAME ================== -->
                         <!-- ============== FULL NAME & NOTE ================== -->
                        <div class="info-wrapper">
-                            <!-- <label for="">Full Name</label><br/>
-                            <input type="text" name="full-name"><br/> -->
-                            <label for="" style="display: inline-block; margin-bottom: 7px;">Note</label><br/>
-                            <textarea name="note" id="note" cols="30" rows="10"></textarea>
+                            <label for="note">Note</label><br/>
+                            <textarea name="note" id="note" cols="30" rows="10" tabindex="-1"></textarea>
                             <div>
                                 <button type="submit" class="save-btn-measurement" name="save" style="border-radius: 3px;">Update Measurement</button>
                             </div>
@@ -75,7 +73,7 @@
                     </div>
                     <!-- ============== CLOSING COAT FORM CONTAINER ================== -->
                     <!-- ============== BARONG FORM CONTAINER ================== -->
-                    <div class="form-flex-1">
+                    <div class="form-flex-1" id="barong">
                     <p class="title-coat">Barong</p>
                     <label for="">Shoulder</label><br/>
                     <input type="text" name="barong-shoulder" class="text-width"><br/>
@@ -101,7 +99,7 @@
                     </div>
                     <!-- ============== CLOSING BARONG FORM CONTAINER ================== -->
                     <!-- ============== PANTS FORM CONTAINER ================== -->
-                    <div class="form-flex-1">
+                    <div class="form-flex-1" id="pants">
                     <p class="title-coat">Pants</p>
                     <label for="">Waist Line</label><br/>
                     <input type="text" name="pants-waist-line" class="text-width"><br/>

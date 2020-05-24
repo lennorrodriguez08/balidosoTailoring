@@ -49,28 +49,28 @@
                     echo "<div class='form-flex-1' id='coat'>";
                     echo "<p class='title-coat'>Coat</p>";
                     echo "<label for=''>Shoulder</label><br/>";
-                    echo "<input type='text' name='coat-shoulder' class='text-width' value=".$row['shoulder']."><br/>";
+                    echo "<input type='text' tabindex='-1' name='coat-shoulder' class='text-width' value=".$row['shoulder']."><br/>";
                     echo "<label for=''>Length</label><br/>";
-                    echo "<input type='text' name='coat-length' class='text-width' value=".$row['length']."><br/>";
+                    echo "<input type='text' tabindex='-1' name='coat-length' class='text-width' value=".$row['length']."><br/>";
                     echo "<label for=''>Arm Length</label><br/>";
-                    echo "<input type='text' name='coat-arm-length-left' class='arm-input' value=".$row['arm_1'].">";
-                    echo "<input type='text' name='coat-arm-length-middle' class='arm-input margin-left-5px' value=".$row['arm_2'].">";
-                    echo "<input type='text' name='coat-arm-length-right' class='arm-input margin-left-5px' value=".$row['arm_3'].">";
+                    echo "<input type='text' tabindex='-1' name='coat-arm-length-left' class='arm-input' value=".$row['arm_1'].">";
+                    echo "<input type='text' tabindex='-1' name='coat-arm-length-middle' class='arm-input margin-left-5px' value=".$row['arm_2'].">";
+                    echo "<input type='text' tabindex='-1' name='coat-arm-length-right' class='arm-input margin-left-5px' value=".$row['arm_3'].">";
                     echo "<p class='title-body'>Body</p>";
                     echo "<label for='' class='margin-left-20px'>Chest</label><br/>";
-                    echo "<input type='text' name='coat-body-chest' class='text-width margin-left-20px' value=".$row['chest']."><br/>";
+                    echo "<input type='text' tabindex='-1' name='coat-body-chest' class='text-width margin-left-20px' value=".$row['chest']."><br/>";
                     echo "<label for='' class='margin-left-20px'>Waist</label><br/>";
-                    echo "<input type='text' name='coat-body-waist' class='text-width margin-left-20px' value=".$row['waist']."><br/>";
+                    echo "<input type='text' tabindex='-1' name='coat-body-waist' class='text-width margin-left-20px' value=".$row['waist']."><br/>";
                     echo "<label for='' class='margin-left-20px'>Hips</label><br/>";
-                    echo "<input type='text' name='coat-body-hips' class='text-width margin-left-20px' value=".$row['hips']."><br/>";
+                    echo "<input type='text' tabindex='-1' name='coat-body-hips' class='text-width margin-left-20px' value=".$row['hips']."><br/>";
                     echo "<label for='' class='title-arm-hole'>Arm Hole</label><br/>";
-                    echo "<input type='text' name='coat-body-arm-hole' class='text-width' value=".$row['armhole']."><br/>";
+                    echo "<input type='text' tabindex='-1' name='coat-body-arm-hole' class='text-width' value=".$row['armhole']."><br/>";
                     echo "<label for=''>Down</label><br/>";
-                    echo "<input type='text' name='coat-body-down' class='text-width' value=".$row['down']."><br/>";
+                    echo "<input type='text' tabindex='-1' name='coat-body-down' class='text-width' value=".$row['down']."><br/>";
                     echo "<label for=''>Front</label><br/>";
-                    echo "<input type='text' name='coat-body-front' class='text-width' value=".$row['front']."><br/>";
+                    echo "<input type='text' tabindex='-1' name='coat-body-front' class='text-width' value=".$row['front']."><br/>";
                     echo "<label for=''>Back</label><br/>";
-                    echo "<input type='text' name='coat-body-back' class='text-width' value=".$row['back']."><br/>";
+                    echo "<input type='text' tabindex='-1' name='coat-body-back' class='text-width' value=".$row['back']."><br/>";
                     echo "</div>";
 
                 }
@@ -79,52 +79,52 @@
                 while($row = mysqli_fetch_array($result4))
                 {
                     
-                    echo "<div class='form-flex-1'>";
+                    echo "<div class='form-flex-1' id='barong'>";
                     echo "<p class='title-coat'>Barong</p>";
                     echo "<label for=''>Shoulder</label><br/>";
-                    echo "<input type='text' name='barong-shoulder' class='text-width' value=".$row['shoulder']."><br/>";
+                    echo "<input type='text' tabindex='-1' name='barong-shoulder' class='text-width' value=".$row['shoulder']."><br/>";
                     echo "<label for=''>Length</label><br/>";
-                    echo "<input type='text' name='barong-length' class='text-width' value=".$row['length']."><br/>";
+                    echo "<input type='text' tabindex='-1' name='barong-length' class='text-width' value=".$row['length']."><br/>";
                     echo "<label for=''>Arm Length</label><br/>";
-                    echo "<span>LS:&nbsp;</span><input type='text' name='barong-ls-left' class='arm-input' value=".$row['arm_ls_1'].">/<input type='text' name='barong-ls-right' class='arm-input margin-left-5px' value=".$row['arm_ls_2']."><br/>";
-                    echo "<span>SS:&nbsp;</span><input type='text' name='barong-ss-left' class='arm-input' value=".$row['arm_ss_1'].">/<input type='text' name='barong-ss-right' class='arm-input margin-left-5px' value=".$row['arm_ss_2']."><br/>";
+                    echo "<span>LS:&nbsp;</span><input type='text' tabindex='-1' name='barong-ls-left' class='arm-input' value=".$row['arm_ls_1'].">/<input type='text' tabindex='-1' name='barong-ls-right' class='arm-input margin-left-5px' value=".$row['arm_ls_2']."><br/>";
+                    echo "<span>SS:&nbsp;</span><input type='text' tabindex='-1' name='barong-ss-left' class='arm-input' value=".$row['arm_ss_1'].">/<input type='text' tabindex='-1' name='barong-ss-right' class='arm-input margin-left-5px' value=".$row['arm_ss_2']."><br/>";
                     echo "<p class='title-body'>Body</p>";
                     echo "<label for='' class='margin-left-20px'>Chest</label><br/>";
-                    echo "<input type='text' name='barong-body-chest' class='text-width margin-left-20px' value=".$row['chest']."><br/>";
+                    echo "<input type='text' tabindex='-1' name='barong-body-chest' class='text-width margin-left-20px' value=".$row['chest']."><br/>";
                     echo "<label for='' class='margin-left-20px'>Waist</label><br/>";
-                    echo "<input type='text' name='barong-body-waist' class='text-width margin-left-20px' value=".$row['waist']."><br/>";
+                    echo "<input type='text' tabindex='-1' name='barong-body-waist' class='text-width margin-left-20px' value=".$row['waist']."><br/>";
                     echo "<label for='' class='margin-left-20px'>Hips</label><br/>";
-                    echo "<input type='text' name='barong-body-hips' class='text-width margin-left-20px' value=".$row['hips']."><br/>";
+                    echo "<input type='text' tabindex='-1' name='barong-body-hips' class='text-width margin-left-20px' value=".$row['hips']."><br/>";
                     echo "<label for='' class='title-arm-hole'>Arm Hole</label><br/>";
-                    echo "<input type='text' name='barong-arm-hole' class='text-width' value=".$row['armhole']."><br/>";
+                    echo "<input type='text' tabindex='-1' name='barong-arm-hole' class='text-width' value=".$row['armhole']."><br/>";
                     echo "<label for=''>Neck</label><br/>";
-                    echo "<input type='text' name='barong-neck' class='text-width' value=".$row['neck']."><br/>";
+                    echo "<input type='text' tabindex='-1' name='barong-neck' class='text-width' value=".$row['neck']."><br/>";
                     echo "<label for=''>Slit</label><br/>";
-                    echo "<input type='text' name='barong-slit' class='text-width' value=".$row['slit'].">";
+                    echo "<input type='text' tabindex='-1' name='barong-slit' class='text-width' value=".$row['slit'].">";
                     echo "</div>";
                 }
 
                 // // This line populate the data for pants
                 while($row = mysqli_fetch_array($result5))
                 {
-                    echo "<div class='form-flex-1'>";
+                    echo "<div class='form-flex-1' id='pants'>";
                     echo "<p class='title-coat'>Pants</p>";
                     echo "<label for=''>Waist Line</label><br/>";
-                    echo "<input type='text' name='pants-waist-line' class='text-width' value=".$row['waistline']."><br/>";
+                    echo "<input type='text' tabindex='-1' name='pants-waist-line' class='text-width' value=".$row['waistline']."><br/>";
                     echo "<label for=''>Hips</label><br/>";
-                    echo "<input type='text' name='pants-hips' class='text-width' value=".$row['hips']."><br/>";
+                    echo "<input type='text' tabindex='-1' name='pants-hips' class='text-width' value=".$row['hips']."><br/>";
                     echo "<label for=''>Arm Hole</label><br/>";
-                    echo "<input type='text' name='pants-arm-hole' class='text-width' value=".$row['armhole']."><br/>";
+                    echo "<input type='text' tabindex='-1' name='pants-arm-hole' class='text-width' value=".$row['armhole']."><br/>";
                     echo "<label for=''>Length</label><br/>";
-                    echo "<input type='text' name='pants-length' class='text-width' value=".$row['length']."><br/>";
+                    echo "<input type='text' tabindex='-1' name='pants-length' class='text-width' value=".$row['length']."><br/>";
                     echo "<label for=''>Crotch</label><br/>";
-                    echo "<input type='text' name='pants-crotch' class='text-width' value=".$row['crotch']."><br/>";
+                    echo "<input type='text' tabindex='-1' name='pants-crotch' class='text-width' value=".$row['crotch']."><br/>";
                     echo "<label for='' class='title-legs'>Legs</label><br/>";
-                    echo "<input type='text' name='pants-legs' class='text-width' value=".$row['legs']."><br/>";
+                    echo "<input type='text' tabindex='-1' name='pants-legs' class='text-width' value=".$row['legs']."><br/>";
                     echo "<label for=''>Knee</label><br/>";
-                    echo "<input type='text' name='pants-knee' class='text-width' value=".$row['knee']."><br/>";
+                    echo "<input type='text' tabindex='-1' name='pants-knee' class='text-width' value=".$row['knee']."><br/>";
                     echo "<label for=''>Bottom</label><br/>";
-                    echo "<input type='text' name='pants-bottom' class='text-width' value=".$row['bottom']."><br/>";
+                    echo "<input type='text' tabindex='-1' name='pants-bottom' class='text-width' value=".$row['bottom']."><br/>";
                     
                     if ($row['pleats'] == "true") 
                     {

@@ -64,7 +64,7 @@
          
          <!-- Main Table Start -->
          <form action="includes/process.php" method="GET">
-            <table id="table" cellspacing="0" cellpadding="0" style="border-collapse: collapse">
+            <table id="table" class="trans_rec_table" cellspacing="0" cellpadding="0" style="border-collapse: collapse">
                <thead>
                   <tr>
                      <th class="fixed-size">Trans No.</th>
@@ -140,7 +140,7 @@
          </div>
          <!-- Main Table Start -->
          <form action="includes/process.php" method="GET">
-            <table id="table" cellspacing="0" cellpadding="0" style="border-collapse: collapse">
+            <table id="table" class="trans_rec_table" cellspacing="0" cellpadding="0" style="border-collapse: collapse">
                <thead>
                   <tr>
                      <th class="fixed-size">Trans No.</th>
@@ -183,6 +183,7 @@
   crossorigin="anonymous"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.js"></script>
   <script src="js/transactionrecord.js"></script>
+  <script src="js/disable.js"></script>
 
   <script>
       function tabEvent(evt, tabName) {

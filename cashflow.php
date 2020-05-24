@@ -162,5 +162,6 @@
       });
 
 </script>
+
 <script src="js/orders.js"></script>
 <?php require 'views/footer.php'; ?>

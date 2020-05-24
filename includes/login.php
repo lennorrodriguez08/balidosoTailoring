@@ -7,9 +7,8 @@ if (isset($_POST['submit']))
   
   $username = $_POST['username'];
   $password = $_POST['password'];
-  $user_level = $_POST['user_level'];
   
-  if (empty($username) || empty($password) || empty($user_level)) {
+  if (empty($username) || empty($password)) {
     //sents back the user if the username or password is empty
   header("Location: ../index?error=emptyfields");   
     exit();
@@ -50,6 +49,7 @@ if (isset($_POST['submit']))
           header("Location: ../home");
           exit();
         }
+
         else {
           header("Location: ../index?login=failed");
           exit();
