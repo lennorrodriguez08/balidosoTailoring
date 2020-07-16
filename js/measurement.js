@@ -71,6 +71,7 @@ let isClicked = false;
 
                     }
                 } else {
+                    
                     alert("No record found");
                 }
                 isClicked = false;

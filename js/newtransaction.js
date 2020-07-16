@@ -101,7 +101,9 @@ $(document).ready(function () {
 
 
    $("#newCustomerForm").on('submit', function() {
-      return confirm('Save new transaction?');
+      if (confirm('Save new transaction?')) {
+         return alert("Transaction saved successfully");
+      }
   });
 
 });
