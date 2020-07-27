@@ -171,6 +171,7 @@
   <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.js"></script>
   <script src="js/measurement.js"></script>
   <script src="js/disable.js"></script>
+  <script src="js/due_date.js"></script>
   <!-- <script src="js/form-validation.js"></script> -->
 
   

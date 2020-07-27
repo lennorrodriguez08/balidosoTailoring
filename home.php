@@ -179,6 +179,7 @@
 
 
         <!-- ============== TABLE AREA ================== -->
+        <form action="./includes/delete_due_date.php" method="POST" id="home_form">
         <div class="due-date-container">
             <p class="title-due-date" style="background: #333;">Upcoming Due Dates</p>
             <div class="table-container">
@@ -194,9 +195,12 @@
                             <th>
                                 Due Date
                             </th>
+                            <th>
+                                Action
+                            </th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody id="due_date_tbody">
 
                         <?php 
 
@@ -212,6 +216,7 @@
                             $result = mysqli_query($connection, $query);
 
                             while ($row = mysqli_fetch_assoc($result)) {
+                                $transaction_id = $row['transaction_id'];
                                 $transaction_no = $row['transaction_no'];
                                 $fullname = $row['fullname'];
                                 $date = $row['date'];
@@ -221,21 +226,19 @@
                                 $str_date = date('F d, Y', strtotime($date));
                                 if ($remaining_day <= 5) {
 
-                                    echo "
-                                    <tr>
-                                        <td>$transaction_no</td>
-                                        <td>$fullname</td>
-                                        <td>$str_date</td>
-                                    </tr>";
+                                    $secret = "INSERT INTO due_date(transaction_id, transaction_no, customer_name, due_dates) VALUES ('$transaction_id','$transaction_no', '$fullname', '$str_date')";    
+                                    $secret1 = mysqli_query($connection, $secret);
+
                                 }     
                               }
                         
                         ?>
-                       
+    
                     </tbody>
                 </table>
             </div>
         </div>
+        </form>
         <!-- ============== CLOSING TABLE AREA ================== -->
     </div>
     <!-- ============== CLOSING HOME CONTENT ================== --> 
