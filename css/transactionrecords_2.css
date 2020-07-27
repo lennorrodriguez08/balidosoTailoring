@@ -2,8 +2,8 @@
 #modalTable, #modalTable_c {
     background-color: rgba(0, 0, 0, .3);
     width: 100%!important;
-    height: 100vh!important;
-    position: absolute!important;
+    height: 100%;
+    position: fixed;
     top: 0!important;
     left: 0!important;
     display: none;

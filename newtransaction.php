@@ -30,6 +30,7 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Balidoso Tailoring | Dashboard</title>
+        <link rel="icon" type="image/png" sizes="16x16" href="./img/favicon.png">
         <link rel="stylesheet" href="css/dashboard.css">
         <link rel="stylesheet" href="css/newtransaction.css">
         <link rel="stylesheet" href="css/all.css">

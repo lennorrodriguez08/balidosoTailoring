@@ -23,7 +23,7 @@ $SQL_POPULATE_TABLE_MAIN = "SELECT
     ((SUM(items.quantity * items.price)) - (customers.amount_receive)) AS balance
     FROM customers INNER JOIN items ON customers.transaction_no = items.transaction_no
     WHERE released = 'false' OR delivered = 'false'
-    GROUP BY items.transaction_no";
+    GROUP BY items.transaction_no ORDER BY transaction_no DESC";
 
 $SQL_POPULATE_TABLE_MAIN_C = "SELECT 
     customers.transaction_no,
@@ -43,7 +43,7 @@ $SQL_POPULATE_TABLE_MAIN_C = "SELECT
     ((SUM(items.quantity * items.price)) - (customers.amount_receive)) AS balance
     FROM customers INNER JOIN items ON customers.transaction_no = items.transaction_no
     WHERE released = 'true' AND delivered = 'true'
-    GROUP BY items.transaction_no";
+    GROUP BY items.transaction_no ORDER BY transaction_no DESC";
 
 
 
